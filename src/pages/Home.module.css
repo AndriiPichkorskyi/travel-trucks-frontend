@@ -1,0 +1,32 @@
+.hero {
+    height: 100%;
+    background: linear-gradient(#00000033, #00000033), url("/src/assets/images/hero-image.webp");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--color-input);
+    height: 100%;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 67%;
+}
+
+.subtitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    margin-top: 1rem;
+}
+
+.button {
+    margin-top: 2.5rem;
+}
