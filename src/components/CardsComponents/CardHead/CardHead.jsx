@@ -2,6 +2,7 @@ import React from "react";
 import css from "./CardHead.module.css";
 import Icon from "../../Icon/Icon";
 import { CARRENCY } from "../../../constants/currency";
+import ButtonFavorites from "../ButtonFavorites/ButtonFavorites";
 
 export default function CardHead({ vehicle }) {
     const title = vehicle.name || "Camper";
@@ -29,7 +30,8 @@ export default function CardHead({ vehicle }) {
             </div>
             <div className={css["column-2"]}>
                 <span className={css.price}>{price}</span>
-                <Icon icon="heart" size={26} />
+                <ButtonFavorites id={vehicle.id} />
+                {/* <Icon icon="heart" size={26} /> */}
             </div>
         </div>
     );

@@ -1,8 +1,7 @@
 import React from "react";
-import Container from "../components/Container/Container";
-import heroImage from "../assets/images/hero-image.webp";
+import Container from "../../components/Container/Container";
 import css from "./Home.module.css";
-import Button from "../components/Button/Button";
+import Button from "../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {

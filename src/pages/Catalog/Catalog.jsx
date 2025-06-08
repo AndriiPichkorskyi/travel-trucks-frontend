@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import Filters from "../components/Filters/Filters";
-import CardList from "../components/CardsComponents/CardList/CardList";
+import Filters from "../../components/Filters/Filters";
+import CardList from "../../components/CardsComponents/CardList/CardList";
 import css from "./Catalog.module.css";
-import Container from "../components/Container/Container";
-import Button from "../components/Button/Button";
+import Container from "../../components/Container/Container";
+import Button from "../../components/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { selectState, setFilters } from "../redux/slice";
-import { fetchVehicle } from "../redux/operations";
+import { selectState, setFilters } from "../../redux/slice";
+import { fetchVehicle } from "../../redux/operations";
 
 export default function Catalog() {
     const dispatch = useDispatch();

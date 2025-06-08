@@ -12,6 +12,12 @@ const slice = createSlice({
         setPage: (state, { payload }) => {
             state.page = payload;
         },
+        addToFavorites: (state, { payload }) => {
+            state.favorites.push(payload);
+        },
+        removeFromFavorites: (state, { payload }) => {
+            state.favorites = state.favorites.map((id) => id !== payload);
+        },
     },
     extraReducers: (builer) => {
         builer
@@ -52,7 +58,7 @@ const slice = createSlice({
 
 export const vehicleReducer = slice.reducer;
 
-export const { setFilters, setPage } = slice.actions;
+export const { setFilters, addToFavorites, removeFromFavorites } = slice.actions;
 
 export const selectVehicleItems = (state) => state.items;
 export const selectLoading = (state) => state.loading;
