@@ -10,13 +10,15 @@ async function getAll() {
     return axiosInstance.get("/");
 }
 
-async function getFiltering(filters = {}) {
+async function getFiltering({ filters = {}, page = 1, limit = 4 }) {
     const params = new URLSearchParams();
     for (const key in filters) {
         if (Object.prototype.hasOwnProperty.call(filters, key)) {
             params.append(key, filters[key]);
         }
     }
+    params.append("page", page);
+    params.append("limit", limit);
 
     return axiosInstance.get("/", { params });
 }

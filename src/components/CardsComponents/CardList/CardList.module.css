@@ -3,3 +3,7 @@
 
     width: 888px;
 }
+
+.item:not(:first-child) {
+    margin-top: 32px;
+}

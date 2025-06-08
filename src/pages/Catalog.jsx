@@ -1,29 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Filters from "../components/Filters/Filters";
-import { db } from "../configs/items";
 import CardList from "../components/CardsComponents/CardList/CardList";
 import css from "./Catalog.module.css";
 import Container from "../components/Container/Container";
-import camperAPI from "../api/campersAPI";
+import Button from "../components/Button/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { selectState, setFilters } from "../redux/slice";
+import { fetchVehicle } from "../redux/operations";
 
 export default function Catalog() {
-    const [filters, setFilters] = useState({});
-    const [items, setItems] = useState(db.items);
+    const dispatch = useDispatch();
+
+    const { items, filters, total, page, limit, error, loading } = useSelector(selectState);
 
     useEffect(() => {
-        console.log("filters :>> ", filters);
-        async function doFetch() {
-            try {
-                const response = await camperAPI.getFiltering(filters);
-                setItems(response.data.items);
-            } catch (error) {
-                setItems([]);
-                console.error(error);
-            }
-            // console.log("response :>> ", response);
-        }
-        doFetch();
+        loadData();
     }, [filters]);
+
+    const loadData = async function () {
+        dispatch(fetchVehicle({ filters, page, limit }));
+    };
 
     const handleSearch = (data) => {
         const newFilters = Object.entries(data).reduce((filters, [key, val]) => {
@@ -34,21 +30,22 @@ export default function Catalog() {
             return filters;
         }, {});
 
-        setFilters(newFilters);
+        dispatch(setFilters(newFilters));
     };
 
-    // useEffect(() => {
-    //     first;
-
-    //     return () => {
-    //         second;
-    //     };
-    // }, [third]);
+    const showLoadMore = Boolean(total) && (page - 1) * limit < total;
 
     return (
         <Container className={css.catalog}>
             <Filters onSubmit={handleSearch} />
-            <CardList items={items} />
+            <div>
+                <CardList items={items} />
+                {showLoadMore && (
+                    <Button secondary onClick={loadData} className={css.button}>
+                        Load More
+                    </Button>
+                )}
+            </div>
         </Container>
     );
 }
