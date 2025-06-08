@@ -1,0 +1,7 @@
+.image-wrapper {
+    border-radius: 10px;
+    min-width: 292px;
+    max-width: 292px;
+    min-height: 100%;
+    overflow: hidden;
+}

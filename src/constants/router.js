@@ -1,6 +1,7 @@
 export const ROUTER = {
     HOME: "/",
     CATALOG: "/catalog",
-    DETAILS: "/details",
+    FEATURES: "features",
+    REVIEWS: "reviews",
     ALL: "*",
 };

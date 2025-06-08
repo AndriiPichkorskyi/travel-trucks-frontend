@@ -4,6 +4,10 @@
     gap: 1rem;
 }
 
+.head.column {
+    flex-direction: column;
+}
+
 .column-1 {
 }
 

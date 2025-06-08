@@ -6,8 +6,8 @@ const axiosInstance = axios.create({
     baseURL: API_URL,
 });
 
-async function getAll() {
-    return axiosInstance.get("/");
+async function getOne(id) {
+    return axiosInstance.get("/" + id);
 }
 
 async function getFiltering({ filters = {}, page = 1, limit = 4 }) {
@@ -24,6 +24,6 @@ async function getFiltering({ filters = {}, page = 1, limit = 4 }) {
 }
 
 export default {
-    getAll,
+    getOne,
     getFiltering,
 };

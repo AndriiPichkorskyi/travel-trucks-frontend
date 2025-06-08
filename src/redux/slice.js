@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchVehicle } from "./operations";
+import { fetchOneVehicle, fetchVehicle } from "./operations";
 
 const slice = createSlice({
     name: "vehicle",
@@ -30,8 +30,8 @@ const slice = createSlice({
                 state.total = payload.total;
                 state.page += 1;
             })
-            .addMatcher(fetchVehicle.pending, (state, action) => {
-                console.log(action);
+            .addCase(fetchOneVehicle.fulfilled, (state, { payload }) => {
+                state.items = [payload];
             })
             .addMatcher(
                 (action) => action.type.endsWith("/fulfilled"),

@@ -9,3 +9,11 @@ export const fetchVehicle = createAsyncThunk("contacts/fetchAll", async (params,
         return thunkAPI.rejectWithValue(error.message);
     }
 });
+export const fetchOneVehicle = createAsyncThunk("contacts/fetchOne", async (id, thunkAPI) => {
+    try {
+        const { data } = await campersAPI.getOne(id);
+        return data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
+});

@@ -1,0 +1,32 @@
+.gallery {
+    display: flex;
+    gap: 32px;
+    height: 312px;
+    margin-top: 28px;
+}
+
+.description {
+    margin-top: 28px;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.tabs {
+    margin-top: 36px; /* 24px of padding-top in links + 36px =  60px total*/
+    margin-bottom: 44px;
+    display: flex;
+    gap: 40px;
+    border-bottom: 1px solid var(--color-grey-light);
+}
+
+.link {
+    padding: 24px 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--color-main);
+}
+
+.link.active {
+    border-bottom: 5px solid var(--color-button);
+}

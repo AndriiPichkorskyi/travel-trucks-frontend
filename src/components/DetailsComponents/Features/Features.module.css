@@ -1,0 +1,28 @@
+.container {
+    border-radius: 10px;
+    padding: 44px 80px;
+    min-width: 631px;
+    background: var(--color-input);
+}
+
+.title {
+    display: block;
+    width: 100%;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--color-grey-light);
+}
+
+.details-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-list {
+    text-transform: capitalize;
+}

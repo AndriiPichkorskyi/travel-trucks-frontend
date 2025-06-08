@@ -3,16 +3,19 @@ import css from "./CardHead.module.css";
 import Icon from "../../Icon/Icon";
 import { CARRENCY } from "../../../constants/currency";
 import ButtonFavorites from "../ButtonFavorites/ButtonFavorites";
+import clsx from "clsx";
 
-export default function CardHead({ vehicle }) {
+export default function CardHead({ vehicle, showFavorite }) {
     const title = vehicle.name || "Camper";
     const reviews = vehicle.reviews.length || 0;
     const rating = vehicle.rating ? vehicle.rating.toFixed(1) : "0.0";
     const location = vehicle.location || "Ukraine";
     const price = vehicle.price ? CARRENCY + vehicle.price.toFixed(2) : "Contact us to get price";
 
+    const headStyle = clsx(css.head, !showFavorite && css.column);
+
     return (
-        <div className={css.head}>
+        <div className={headStyle}>
             <div className={css["column-1"]}>
                 <h3 className={css.title}>{title}</h3>
                 <div>
@@ -30,8 +33,7 @@ export default function CardHead({ vehicle }) {
             </div>
             <div className={css["column-2"]}>
                 <span className={css.price}>{price}</span>
-                <ButtonFavorites id={vehicle.id} />
-                {/* <Icon icon="heart" size={26} /> */}
+                {showFavorite && <ButtonFavorites id={vehicle.id} />}
             </div>
         </div>
     );

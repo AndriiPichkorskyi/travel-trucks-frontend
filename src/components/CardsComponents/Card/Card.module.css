@@ -33,9 +33,6 @@
 
 .equipment-list {
     margin-top: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
 }
 
 .link {
