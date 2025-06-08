@@ -61,12 +61,12 @@ export default function Filters({ onSubmit = () => {} }) {
 
             <p className={css["filters-title"]}>Filters</p>
 
-            <fieldset className={css["equipment-label"]}>
-                <legend className={css["equipment-label-title"]}>Vehicle equipment</legend>
+            <fieldset className={css["equipment-fieldset"]}>
+                <legend className={css["equipment-fieldset-title"]}>Vehicle equipment</legend>
                 <div className={css["equipment-option-list"]}>
                     {Object.entries(vehicleEquipment).map(([key, { title, icon }]) => {
                         return (
-                            <label key={key}>
+                            <label key={key} className={css.label}>
                                 <CategoryItem icon={icon} title={title} isActive={filtersState[key]} />
                                 <input type="checkbox" name="equipment" value={key} onChange={handleEquipment} />
                             </label>
@@ -75,8 +75,8 @@ export default function Filters({ onSubmit = () => {} }) {
                 </div>
             </fieldset>
 
-            <fieldset className={css["equipment-label"]}>
-                <legend className={css["equipment-label-title"]}>Vehicle type</legend>
+            <fieldset className={css["equipment-fieldset"]}>
+                <legend className={css["equipment-fieldset-title"]}>Vehicle type</legend>
                 <div className={css["equipment-option-list"]}>
                     {Object.entries(vehicleType).map(([key, { title, icon }]) => {
                         return (

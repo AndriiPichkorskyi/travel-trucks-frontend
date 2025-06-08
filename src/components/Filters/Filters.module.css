@@ -12,16 +12,20 @@
     margin-top: 8px;
 }
 
+.label {
+    cursor: pointer;
+}
+
 .filters-title {
     margin-top: 40px;
 }
 
-.equipment-label {
+.equipment-fieldset {
     display: block;
     margin-top: 32px;
 }
 
-.equipment-label-title {
+.equipment-fieldset-title {
     display: block;
     width: 100%;
 

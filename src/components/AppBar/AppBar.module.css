@@ -1,20 +1,21 @@
 .header {
-    position: relative;
-    height: 72px;
+    min-height: 72px;
 }
 
 .header-container {
     height: 100%;
+    margin: 0 auto;
 }
 
 .logo {
     position: absolute;
-    left: var(--padding-container);
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
 }
 
 .nav {
+    position: relative;
     height: 100%;
 }
 
