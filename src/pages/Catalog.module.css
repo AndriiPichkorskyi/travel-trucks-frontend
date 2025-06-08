@@ -1,0 +1,5 @@
+.catalog {
+    margin-top: 2rem;
+    display: flex;
+    gap: 64px;
+}

@@ -1,0 +1,11 @@
+.container {
+    border-radius: 100px;
+    padding: 12px 18px;
+    height: 48px;
+    background: var(--color-badges);
+    width: fit-content;
+    text-transform: capitalize;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}

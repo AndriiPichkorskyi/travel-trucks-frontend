@@ -1,0 +1,36 @@
+.head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.column-1 {
+}
+
+.column-2 {
+    display: flex;
+    gap: 12px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    margin-bottom: 8px;
+}
+
+.info {
+    display: inline-flex;
+    gap: 8px;
+    position: relative;
+    font-weight: 400;
+}
+
+.info:not(:first-child) {
+    margin-left: 16px;
+}
+
+.price {
+    composes: title;
+    display: inline;
+}
