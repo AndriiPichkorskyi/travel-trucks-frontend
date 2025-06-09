@@ -4,11 +4,12 @@ import { selectVehicleItems } from "../../redux/slice";
 import { fetchOneVehicle } from "../../redux/operations";
 import css from "./Details.module.css";
 import CardHead from "../../components/CardsComponents/CardHead/CardHead";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import Container from "../../components/Container/Container";
 import Thumb from "../../components/Thumb/Thumb";
 import { ROUTER } from "../../constants/router";
 import clsx from "clsx";
+import FormBook from "../../components/FormBook/FormBook";
 
 export default function Details() {
     const dispatch = useDispatch();
@@ -16,6 +17,15 @@ export default function Details() {
     const vehicleItems = useSelector(selectVehicleItems);
 
     const vehicle = vehicleItems.find((item) => item.id === id);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const currentPath = location.pathname;
+        if (currentPath.includes(ROUTER.REVIEWS) || currentPath.includes(ROUTER.FEATURES)) return;
+        else navigate(ROUTER.FEATURES);
+    }, []);
 
     useEffect(() => {
         if (!vehicle) dispatch(fetchOneVehicle(id));
@@ -31,8 +41,10 @@ export default function Details() {
         <Container className={css.details}>
             <CardHead vehicle={vehicle} />
             <ul className={css.gallery}>
-                {vehicle.gallery.map((image) => (
+                {vehicle.gallery.map((image, i) => (
+                    // <li key={i}>
                     <Thumb thumb={image.thumb} />
+                    // </li>
                 ))}
             </ul>
             <p className={css.description}>{vehicle.description}</p>
@@ -49,7 +61,10 @@ export default function Details() {
                     </NavLink>
                 </li>
             </ul>
-            <Outlet />
+            <div className={css["tabs-container"]}>
+                <Outlet />
+                <FormBook />
+            </div>
         </Container>
     );
 }

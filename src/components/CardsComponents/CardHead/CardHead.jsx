@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./CardHead.module.css";
 import Icon from "../../Icon/Icon";
-import { CARRENCY } from "../../../constants/currency";
+import { CURRENCY } from "../../../constants/currency";
 import ButtonFavorites from "../ButtonFavorites/ButtonFavorites";
 import clsx from "clsx";
 
@@ -10,7 +10,7 @@ export default function CardHead({ vehicle, showFavorite }) {
     const reviews = vehicle.reviews.length || 0;
     const rating = vehicle.rating ? vehicle.rating.toFixed(1) : "0.0";
     const location = vehicle.location || "Ukraine";
-    const price = vehicle.price ? CARRENCY + vehicle.price.toFixed(2) : "Contact us to get price";
+    const price = vehicle.price ? CURRENCY + vehicle.price.toFixed(2) : "Contact us to get price";
 
     const headStyle = clsx(css.head, !showFavorite && css.column);
 

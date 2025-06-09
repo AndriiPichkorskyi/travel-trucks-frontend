@@ -8,22 +8,28 @@ import { ROUTER } from "../constants/router";
 import Layout from "./Layout/Layout";
 import Features from "./DetailsComponents/Features/Features";
 import Reviews from "./DetailsComponents/Reviews/Reviews";
+import { ToastContainer } from "react-toastify";
+import Loader from "./Loader/Loader";
 
 function App() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-                <Route path={ROUTER.HOME} element={<Layout />}>
-                    <Route index element={<Home />} />
-                    <Route path={ROUTER.CATALOG} element={<Catalog />} />
-                    <Route path={`${ROUTER.CATALOG}/:id`} element={<Details />}>
-                        <Route path={ROUTER.FEATURES} element={<Features />} />
-                        <Route path={ROUTER.REVIEWS} element={<Reviews />} />
+        <>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                    <Route path={ROUTER.HOME} element={<Layout />}>
+                        <Route index element={<Home />} />
+                        <Route path={ROUTER.CATALOG} element={<Catalog />} />
+                        <Route path={`${ROUTER.CATALOG}/:id`} element={<Details />}>
+                            <Route path={ROUTER.FEATURES} element={<Features />} />
+                            <Route path={ROUTER.REVIEWS} element={<Reviews />} />
+                        </Route>
+                        <Route path={ROUTER.ALL} element={<Home />} />
                     </Route>
-                    <Route path={ROUTER.ALL} element={<Home />} />
-                </Route>
-            </Routes>
-        </Suspense>
+                </Routes>
+            </Suspense>
+            <Loader visible={true} />
+            <ToastContainer />
+        </>
     );
 }
 

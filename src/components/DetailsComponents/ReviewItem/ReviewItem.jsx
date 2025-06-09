@@ -13,9 +13,9 @@ export default function ReviewItem({ review }) {
                 <div className={css.avatar}>{name[0]}</div>
                 <div className={css["title-rating-container"]}>
                     <p className={css.name}>{name}</p>
-                    <p className={css.rating}>
+                    <div className={css.rating}>
                         <StarRating rating={rating} size={16} />
-                    </p>
+                    </div>
                 </div>
             </div>
             {comment && <p className={css.comment}>{comment}</p>}
