@@ -86,11 +86,3 @@ includes features like filtering, favorites, and booking functionalities.
 - **Characteristics**: Displays properties like transmission, AC, bathroom,
   kitchen, TV, radio, refrigerator, microwave, gas, water (if available).
 - **Details**: Includes form, length, width, height, tank, consumption.
-
-## Notes
-
-- Ensure the backend API is accessible for fetching camper data.
-- Favorites are stored in localStorage via Redux Persist for persistence across
-  sessions.
-- The booking form submission triggers a success notification (no actual backend
-  booking endpoint is implemented in the provided API).
