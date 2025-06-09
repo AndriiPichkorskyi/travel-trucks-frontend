@@ -14,8 +14,7 @@ includes features like filtering, favorites, and booking functionalities.
   persistent storage)
 - **Routing**: React Router
 - **HTTP Requests**: Axios
-- **Styling**: [Choose your preferred CSS library, e.g., CSS Modules,
-  Styled-Components, or MUI]
+- **Styling**: CSS Modules
 - **Backend API**: MockAPI
   (`https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers`)
 
