@@ -1,0 +1,31 @@
+.head {
+    display: flex;
+}
+
+.avatar {
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    background: var(--color-badges);
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    color: var(--color-button);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-rating-container {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment {
+    margin-top: 1rem;
+    font-weight: 400;
+    color: var(--color-text);
+}

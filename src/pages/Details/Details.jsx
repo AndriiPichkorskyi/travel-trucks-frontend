@@ -28,7 +28,7 @@ export default function Details() {
     if (!vehicle) return <p>Loading...</p>;
 
     return (
-        <Container className={css.catalog}>
+        <Container className={css.details}>
             <CardHead vehicle={vehicle} />
             <ul className={css.gallery}>
                 {vehicle.gallery.map((image) => (
@@ -38,12 +38,12 @@ export default function Details() {
             <p className={css.description}>{vehicle.description}</p>
 
             <ul className={css.tabs}>
-                <li className={css["link"]}>
+                <li className={css["link"]} key="features">
                     <NavLink to={ROUTER.FEATURES} className={buildLinkClass}>
                         Features
                     </NavLink>
                 </li>
-                <li className={css["link"]}>
+                <li className={css["link"]} key="reviews">
                     <NavLink to={ROUTER.REVIEWS} className={buildLinkClass}>
                         Reviews
                     </NavLink>
