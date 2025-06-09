@@ -1,39 +1,40 @@
 .header {
-    min-height: 72px;
-    background-color: var(--color-input);
+  min-height: 72px;
+  background-color: var(--color-input);
 }
 
 .header-container {
-    height: 100%;
-    margin: 0 auto;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .logo {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .nav {
-    position: relative;
-    height: 100%;
+  position: relative;
+  height: 100%;
 }
 
 .navigation {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    margin: 0 auto;
-    gap: 32px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+  gap: 32px;
 }
 
 .link {
-    display: flex;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: var(--color-main);
 }
 
 .link.active {
-    color: var(--color-button-hover);
+  color: var(--color-button-hover);
 }
