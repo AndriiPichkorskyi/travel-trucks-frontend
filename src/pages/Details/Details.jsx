@@ -34,7 +34,7 @@ export default function Details() {
       currentPath.includes(ROUTER.FEATURES)
     )
       return;
-    else navigate(ROUTER.FEATURES);
+    else navigate(ROUTER.FEATURES, { replace: true });
   }, []);
 
   useEffect(() => {
